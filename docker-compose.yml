@@ -7,14 +7,13 @@ services:
   tor:
     image: strm/tor
     restart: always
-    depends_on:
-      - web
+    depends_on: [ web ]
     environment:
-        LISTEN_PORT: 80
-        REDIRECT: web:80
-        # Generate a new key with
-        # docker run --rm --entrypoint shallot strm/tor-hiddenservice-nginx ^foo
-        PRIVATE_KEY: |
-          -----BEGIN RSA PRIVATE KEY-----
-          ...
-          -----END RSA PRIVATE KEY-----
+      LISTEN_PORT: 80
+      REDIRECT: web:80
+      # Generate a new key with
+      # docker run --rm --entrypoint shallot strm/tor-hiddenservice-nginx ^foo
+      PRIVATE_KEY: |
+        -----BEGIN RSA PRIVATE KEY-----
+        ...
+        -----END RSA PRIVATE KEY-----
