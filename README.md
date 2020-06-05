@@ -1,6 +1,6 @@
 # Tornado onion service
 
-This repo can be used to run tornado.cash as an onion service.
+This repo can be used to run tornado.cash as an onion service. It will auto update the UI when the new version is released.
 
 ## Usage:
 

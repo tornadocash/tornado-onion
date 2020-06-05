@@ -2,8 +2,13 @@ version: '2'
 
 services:
   web:
-    build: .
+    image: tornadocash/ui
     restart: always
+  watchtower:
+    image: v2tec/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60
   tor:
     image: strm/tor
     restart: always
